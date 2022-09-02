@@ -1,0 +1,6 @@
+.vs/*
+obj/*
+bin/*
+AppPackages/*
+BundleArtifacts/*
+*.user
