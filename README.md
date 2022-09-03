@@ -1,8 +1,10 @@
 # msix-nsis
 
-A mixed demo for wrapping the msix to NSIS setup program.
+A mixed demo for wrapping the msix to NSIS(Nullsoft Scriptable Install System) setup program.
 
-It make you can pack your `.msix/.msixbundle` and `.cer` files to a single setup program.
+It make you can pack your `.msixbundle` and `.cer` files to a single setup program.
+
+> Format appx/appxbundle/msix/msixbundle are supported.
 
 ## Features
 
@@ -18,7 +20,7 @@ It make you can pack your `.msix/.msixbundle` and `.cer` files to a single setup
 
 2. Copy the output `.msixbundle` and `.cer` files like [msix_build.bat](msix_build.bat).
 
-   If publish output a `.msix` extension file, change the [nsis/setup.nsi](nsis/setup.nsi) file for supporting.
+   If publish output a `.msix` extension or other msix-like file, change the [nsis/setup.nsi](nsis/setup.nsi) file for supporting.
 
 3. Build the NSIS setup like [nsis_build.bat](nsis_build.bat).
 
@@ -32,12 +34,13 @@ certmgr
 
 # https://nsis.sourceforge.io
 nsis
+
+# https://github.com/emako/msixexec
+msixexec
 ```
 
 ## FAQs
 
 1. Unrecommended to replace the NSIS version in this demo.
-2. After nsExec::ExecToLog called, the sleep time can be changed to your suitable value.
-
 3. UAC permission is required because certificate file should be auto installed.
 

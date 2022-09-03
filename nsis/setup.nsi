@@ -16,7 +16,7 @@ VIAddVersionKey "LegalCopyright"        "${PRODUCT_LEGAL}"
 
 !addplugindir plugins
 
-Icon "favion.ico"
+Icon "favicon.ico"
 Name "${PRODUCT_NAME}"
 OutFile "..\${PRODUCT_NAME}_Setup.exe"
 RequestExecutionLevel admin
@@ -29,9 +29,9 @@ Function MsixSetup
 	File "tools\certmgr.exe"
 	File "..\app.cer"
 	nsExec::ExecToLog 'certmgr.exe -add app.cer -s -r localMachine AuthRoot'
+	File "tools\msixexec.exe"
 	File "..\app.msixbundle"
-	nsExec::ExecToLog 'cmd /c app.msixbundle'
-	Sleep 3000
+	nsExec::ExecToLog 'msixexec.exe app.msixbundle'
 FunctionEnd
 
 Function CheckMutex
