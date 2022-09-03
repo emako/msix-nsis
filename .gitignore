@@ -1,3 +1,6 @@
 App.cer
 App.msix
+App.msixbundle
+App.appx
+App.appxbundle
 App_Setup.exe
